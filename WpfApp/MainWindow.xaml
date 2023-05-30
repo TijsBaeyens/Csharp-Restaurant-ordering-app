@@ -1,0 +1,153 @@
+﻿<Window x:Class="WpfApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="550" Width="800"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        AllowsTransparency="True" Loaded="Window_Loaded">
+    <Border CornerRadius="12">
+        <Border.Background>
+            <ImageBrush ImageSource="C:\Users\Tijs Baeyens\Documents\Projecten\Solution1\WpfApp\Images\back-image.jpg"
+                        Stretch="None"/>
+        </Border.Background>
+
+        <Border CornerRadius="10"                    
+            BorderThickness="2"
+            Opacity="0.95">
+
+            <Border.BorderBrush>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Color="#462AD8" Offset="0"/>
+                    <GradientStop Color="#DA34AE" Offset="0.75"/>
+                    <GradientStop Color="#8A16C1" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.BorderBrush>
+
+            <Border.Background>
+                <LinearGradientBrush StartPoint="0,1" EndPoint="1,0">
+                    <GradientStop Color="#060531" Offset="0"/>
+                    <GradientStop Color="#1B1448" Offset="1"/>
+                </LinearGradientBrush>
+            </Border.Background>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="25"/>
+                        <ColumnDefinition Width="5"/>
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button x:Name="btnMinimize"                           
+                            BorderThickness="0"
+                            Content="-"
+                            Foreground="White"
+                            FontSize="16"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="1"
+                            Click="btnMinimize_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#28AEED"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#278BEF"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+
+                    </Button>
+
+                    <Button x:Name="btnClose"                          
+                            BorderThickness="0"
+                            Content="X"
+                            Foreground="White"
+                            FontSize="12"
+                            FontFamily="Montserrat"
+                            Cursor="Hand"
+                            Grid.Column="2"
+                            Click="btnClose_Click">
+
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Background" Value="#DA34AE"/>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Background" Value="#C62DAE"/>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+
+                        <Button.Template>
+                            <ControlTemplate TargetType="Button">
+                                <Border Width="18" Height="18"
+                                        CornerRadius="9"
+                                        Background="{TemplateBinding Background}">
+                                    <ContentPresenter VerticalAlignment="Center"
+                                                      HorizontalAlignment="Center"/>
+                                </Border>
+                            </ControlTemplate>
+                        </Button.Template>
+                    </Button>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <DataGrid Name="test" Margin="12,15,423,27" CanUserAddRows="False" IsReadOnly="True" />
+                    <Button Content="Add to order" HorizontalAlignment="Left" Height="30" Margin="389,369,0,0" VerticalAlignment="Top" Width="207" Click="Button_Click_1" />
+                    <DataGrid Name="test2" Margin="395,19,19,224" CanUserAddRows="False" IsReadOnly="True"/>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Width="82" IsReadOnly="True" Text="0" Foreground="#FFFDFDFD" Margin="452,328,0,0" TextAlignment="Center"/>
+
+                        <Button x:Name="plusButton" Click="PlusButton_Click" Content="+" Margin="414,320,352,-15" Height="30"/>
+                        <Button x:Name="minusButton" Content="-" Click="MinusButton_Click" Margin="541,320,225,-15" Height="30" />
+                    </Grid>
+                </Grid>
+                <Button Content="Gerecht verwijderen" HorizontalAlignment="Left" Height="30" Margin="389,415,0,0" Grid.Row="1" VerticalAlignment="Top" Width="207" RenderTransformOrigin="0.203,-0.191" Click="Button_Click_5"/>
+                <Button Content="Alle gerechten verwijderen" HorizontalAlignment="Left" Height="34" Margin="389,458,0,0" Grid.Row="1" VerticalAlignment="Top" Width="208" Click="Button_Click_6"/>
+                <Button Content="Betalen" Margin="620,329,30,155" Grid.Row="1" Click="Button_Click_7" Height="30"/>
+                <Button Content="Toon bestellingen" Margin="620,373,30,111" Grid.Row="1" Click="Button_Click_8" Height="30"/>
+                <Button Content="Administrator" Margin="620,461,30,23" Grid.Row="1" Click="Button_Click_9" Height="30"/>
+                <Button Content="Gegevens" Margin="620,419,30,65" Grid.Row="1" Height="30" Click="Button_Click_2"/>
+
+
+
+            </Grid>
+
+        </Border>
+
+    </Border>
+</Window>

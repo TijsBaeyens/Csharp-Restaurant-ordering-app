@@ -1,0 +1,22 @@
+﻿<Window x:Class="WpfApp.AdminPopUp"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp"
+        mc:Ignorable="d"
+        Title="AdminPopUp" Height="450" Width="800">
+    <Grid>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="250,59,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="txtDishName"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="250,127,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="txtDishDescription"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="250,190,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="txtPrice"/>
+        <TextBox HorizontalAlignment="Left" Height="40" Margin="250,251,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="100" Name="txtAmount"/>
+        <Label Content="Dish name" Margin="130,53,600,347"/>
+        <Label Content="Dish description" Margin="130,120,562,280"/>
+        <Label Content="Price" Width="40" Margin="130,193,600,211" RenderTransformOrigin="0.326,0.502"/>
+        <Label Content="Amount available" Margin="130,258,557,138"/>
+        <Button Content="Opslaan" HorizontalAlignment="Left" Height="50" Margin="251,326,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click"/>
+        <Button Content="Terug" HorizontalAlignment="Left" Height="45" Margin="10,8,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
